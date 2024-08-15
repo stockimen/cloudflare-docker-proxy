@@ -80,6 +80,10 @@
 <body>
 <div class="header">
     <h1>镜像使用说明</h1>
+    <li>
+                当前页访问人次 PV :<span id="page_pv" style="color:red">?</span>
+                .    --------.当前页访问人数UV:<span id="page_uv" style="color:blue">?</span>
+            </li>
     <a href="https://github.com/lixd/cloudflare-docker-proxy" target="_blank" class="github-link">
         <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="github-icon">
     </a>
@@ -136,5 +140,6 @@ docker pull cloudsmith.{{host}}/public/repo/image:latest  # 拉取 Cloudsmith �
         commandsElement.innerHTML = commandsElement.innerHTML.replace(/{{host}}/g, mainDomain);
     });
 </script>
+<script defer src="//tongji.739527.xyz/js/index.min.js"></script>
 </body>
 </html>
