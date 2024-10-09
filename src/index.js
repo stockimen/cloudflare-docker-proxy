@@ -11,13 +11,13 @@ const dockerHub = "https://registry-1.docker.io";
 const routes = {
   // production
   "docker.zxh9313.eu.org": dockerHub,
-  // "quay.zxh9313.eu.org": "https://quay.io",
-  // "gcr.zxh9313.eu.org": "https://gcr.io",
-  // "k8s-gcr.zxh9313.eu.org": "https://k8s.gcr.io",
-  // "k8s.zxh9313.eu.org": "https://registry.k8s.io",
-  // "ghcr.zxh9313.eu.org": "https://ghcr.io",
-  // "cloudsmith.zxh9313.eu.org": "https://docker.cloudsmith.io",
-  // "ecr.zxh9313.eu.org": "https://public.ecr.aws",
+  "quay.zxh9313.eu.org": "https://quay.io",
+  "gcr.zxh9313.eu.org": "https://gcr.io",
+  "k8s-gcr.zxh9313.eu.org": "https://k8s.gcr.io",
+  "k8s.zxh9313.eu.org": "https://registry.k8s.io",
+  "ghcr.zxh9313.eu.org": "https://ghcr.io",
+  "cloudsmith.zxh9313.eu.org": "https://docker.cloudsmith.io",
+  "ecr.zxh9313.eu.org": "https://public.ecr.aws",
 
   // staging
   "docker-staging.zxh9313.eu.org": dockerHub,
@@ -49,14 +49,14 @@ async function handleRequest(request) {
   const isDockerHub = upstream == dockerHub;
   const authorization = request.headers.get("Authorization");
   // return docs
-  if (url.pathname === "/") {
-    return new Response(DOCS, {
-      status: 200,
-      headers: {
-        "content-type": "text/html"
-      }
-    });
-  }
+  // if (url.pathname === "/") {
+  //   return new Response(DOCS, {
+  //     status: 200,
+  //     headers: {
+  //       "content-type": "text/html"
+  //     }
+  //   });
+  // }
   if (url.pathname == "/v2/") {
     const newUrl = new URL(upstream + "/v2/");
     const headers = new Headers();
